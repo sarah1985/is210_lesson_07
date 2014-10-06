@@ -35,16 +35,86 @@ that you create!
     necessary to become functional programmers.
 
 
+Task 07: Iterating Dictionaries
+--------------------------------
+
+It is often very useful to iterate through a dictionary object separating the iteration into key and value pairs. In
+this task you will need to use your new knowledge of dictionary iteration using the ``iteritems()`` method.
+
+Specifications
+^^^^^^^^^^^^^^
+
+#.  Create a file named ``task_07.py``
+
+#.  Declare a variable named ``DATA`` as a dictionary object. Assign it these key value pairs. This example data for
+your to work with.
+
+.. code-block::
+
+    DATA = {
+        2: 7493945,
+        76: 4654320,
+        3: 4091979,
+        90: 1824881,
+        82: 714422,
+        45: 1137701,
+        10: 374362,
+        0: 326226,
+        -15: 417203,
+        -56: 333525,
+        67: 323451,
+        99: 321696,
+        21: 336753,
+        -100: 361237,
+        55: 1209714,
+        5150: 1771800,
+        42: 4714011,
+        888: 14817667,
+        3500: 13760234,
+        712: 10903322,
+        7: 10443792,
+        842: 11716264,
+        18584: 10559923,
+        666: 9275602,
+        70: 11901200,
+        153: 12074784,
+        8: 4337229
+    }
+
+#. Create a function named ``iter_dict_funky_sum()``.
+
+    #.  Declare a running total integer variable.
+
+    #.  Use a ``for`` loop on to extract the key and value pairs from ``DATA``.
+
+    #.  Assign and append the product of the value minus the key to the running total variable.
+
+    #.  Return the funky total.
+
+Output Example
+^^^^^^^^^^^^^^
+
+.. code-block::
+
+    >>> import task_07
+    >>> task_07.iter_dict_funky_sum(task_07.DATA)
+    140166242
+    >>>
 
 
 Task 09: Merging Data Using a Dictionary Key
 --------------------------------------------
 
-As a Python programmer, you may at some point face a situation where you are tasked with merging data from multiple data sources. This is usually done with some kind of key values shared between the data sets. 
+As a Python programmer, you may at some point face a situation where you are tasked with merging data from multiple
+data sources. This is usually done with some kind of key values shared between the data sets.
 
-For this task you will be working to merge Internet bandwidth data collected from three of the routers used by SPS at our main campus. The Chief Information Officer (CIO) wants a report showing hourly average download traffic for each router between 9/15/2014 and 9/20/2014. The network administrator has dumped the data for each router into a CSV file.
+For this task you will be working to merge Internet bandwidth data collected from three of the routers used by SPS at
+our main campus. The Chief Information Officer (CIO) wants a report showing hourly average download traffic for each
+router between 9/15/2014 and 9/20/2014. The network administrator has dumped the data for each router into a CSV file.
 
-Since we have yet to cover file IO operations in class, a ``task_09_utility.py`` module has been provided. It includes a helper function for retrieving data from the CSV files in the form as a list of dictionary objects. A second helper function provides a way to convert a dictionary into a sorted list.
+Since we have yet to cover file IO operations in class, a ``task_09_utility.py`` module has been provided. It
+includes a helper function for retrieving data from the CSV files in the form as a list of dictionary objects. A
+second helper function provides a way to convert a dictionary into a sorted list.
 
 
 Specifications
