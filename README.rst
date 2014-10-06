@@ -47,7 +47,7 @@ Specifications
 #.  Create a file named ``task_07.py``
 
 #.  Declare a variable named ``DATA`` as a dictionary object. Assign it these key value pairs. This example data for
-your to work with.
+    your to work with.
 
 .. code-block::
 
