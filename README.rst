@@ -49,6 +49,19 @@ Specifications
 #.  Declare a variable named ``DATA`` as a dictionary object. Assign it these key value pairs. This example data for
     your to work with.
 
+#. Create a function named ``iter_dict_funky_sum()``.
+
+    #.  Declare a running total integer variable.
+
+    #.  Use a ``for`` loop on to extract the key and value pairs from ``DATA``.
+
+    #.  Assign and append the product of the value minus the key to the running total variable.
+
+    #.  Return the funky total.
+
+``DATA`` Example
+^^^^^^^^^^^^^^^^
+
 .. code-block::
 
     DATA = {
@@ -81,15 +94,6 @@ Specifications
         8: 4337229
     }
 
-#. Create a function named ``iter_dict_funky_sum()``.
-
-    #.  Declare a running total integer variable.
-
-    #.  Use a ``for`` loop on to extract the key and value pairs from ``DATA``.
-
-    #.  Assign and append the product of the value minus the key to the running total variable.
-
-    #.  Return the funky total.
 
 Output Example
 ^^^^^^^^^^^^^^
