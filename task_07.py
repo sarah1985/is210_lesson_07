@@ -33,7 +33,7 @@ DATA = {
 }
 
 
-def iter_dict_funky_sum(dictionary):
+def iter_dict_funky_sum(DATA):
     """funky sum"""
     running_total = 0
     for key, value in DATA.iteritems():
