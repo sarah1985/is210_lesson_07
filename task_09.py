@@ -26,10 +26,8 @@ def load_data(data):
         loaded_data[key_value] = value
 
     return loaded_data
-
-
 DATA = load_data(DATA_FILES)
-print DATA
+print DATA.keys()
 
 
 def merge_data(loaded_data):
@@ -37,8 +35,15 @@ def merge_data(loaded_data):
 
     merged_data = {}
     for key, value in loaded_data.iteritems():
+        for traffic in value:
+            candidate_key = traffic['clock'][8:13]
+            if candidate_key not in merged_data:
+                merged_data[candidate_key] = [loaded_data.get('clock'), loaded_data.get('value_avg')]
+                if None in merged_data[candidate_key]:
+                    merged_data[candidate_key] = [0]
 
     sorted_data = task_09_utility.sort_dict(merged_data)
+
     return sorted_data
 
 
