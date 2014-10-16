@@ -5,15 +5,17 @@
 import task_09_utility
 from pprint import pprint
 
-DATA_FILES = [{
-                  'data': 'task_09_data/router_01.csv'
-              },
-              {
-                  'data': 'task_09_data/router_02.csv'
-              },
-              {
-                  'data': 'task_09_data/router_03.csv'
-              }]
+DATA_FILES = [
+    {
+        'data': 'task_09_data/router_01.csv'
+    },
+    {
+        'data': 'task_09_data/router_02.csv'
+    },
+    {
+        'data': 'task_09_data/router_03.csv'
+    }
+]
 
 
 def load_data(data):
@@ -27,6 +29,8 @@ def load_data(data):
         loaded_data[key_value] = value
 
     return loaded_data
+
+
 DATA = load_data(DATA_FILES)
 print DATA
 
@@ -36,22 +40,16 @@ def merge_data(loaded_data):
 
     merged_data = {}
     for key, value in loaded_data.iteritems():
-        print key
         for traffic in value:
             candidate_key = traffic['clock'][8:13]
 
-            if candidate_key in merged_data:
-                merged_data[candidate_key][key] = traffic.get('value_avg')
-            else:
+            if candidate_key not in merged_data:
                 merged_data[candidate_key] = [traffic.get('clock'), 0, 0, 0]
 
-                merged_data[candidate_key][key] = traffic.get('value_avg')
-
+            merged_data[candidate_key][key] = traffic.get('value_avg')
 
     sorted_data = task_09_utility.sort_dict(merged_data)
-    #return merged_data
     return sorted_data
-
 
 SORTED_LIST = merge_data(DATA)
 pprint(SORTED_LIST)
