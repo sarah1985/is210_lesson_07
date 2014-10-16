@@ -3,6 +3,7 @@
 """ Task 09: Merging Data Using a Dictionary Key """
 
 import task_09_utility
+from pprint import pprint
 
 DATA_FILES = [{
                   'data': 'task_09_data/router_01.csv'
@@ -27,7 +28,7 @@ def load_data(data):
 
     return loaded_data
 DATA = load_data(DATA_FILES)
-print DATA.keys()
+print DATA
 
 
 def merge_data(loaded_data):
@@ -35,17 +36,22 @@ def merge_data(loaded_data):
 
     merged_data = {}
     for key, value in loaded_data.iteritems():
+        print key
         for traffic in value:
             candidate_key = traffic['clock'][8:13]
-            if candidate_key not in merged_data:
-                merged_data[candidate_key] = [loaded_data.get('clock'), loaded_data.get('value_avg')]
-                if None in merged_data[candidate_key]:
-                    merged_data[candidate_key] = [0]
+
+            if candidate_key in merged_data:
+                merged_data[candidate_key][key] = traffic.get('value_avg')
+            else:
+                merged_data[candidate_key] = [traffic.get('clock'), 0, 0, 0]
+
+                merged_data[candidate_key][key] = traffic.get('value_avg')
+
 
     sorted_data = task_09_utility.sort_dict(merged_data)
-
+    #return merged_data
     return sorted_data
 
 
 SORTED_LIST = merge_data(DATA)
-print SORTED_LIST
+pprint(SORTED_LIST)
